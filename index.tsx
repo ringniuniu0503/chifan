@@ -931,7 +931,15 @@ function SmartGuideView({ onClose, onComplete, loc, promptGenAI, isVegetarian }:
        {step === 3 && (
           <>
               <div style={styles.guideQuestion}>時間 Time?</div>
-              <div style={styles.choiceGrid}>
-                  <div className="choice-card-interactive" style={styles.choiceCard} onClick={() => handleNext('time', 'rush')}>
-                       <div style={styles.choiceIcon}>🥡</div>
+                <div style={styles.choiceGrid}>
+                    <div
+                        className="choice-card-interactive"
+                        style={styles.choiceCard}
+                        onClick={() => handleNext('time', 'rush')}
+                    >
+                        <div style={styles.choiceIcon}>🥡</div>
+                        <div>快速餐點</div>
+                    </div>
+                </div>
+
                        
