@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taiwan Foodie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Guzaowei (Nostalgic) Palette - Adjusted for Contrast */
+        --bg-body: #F4F0E6; /* Warm Rice Paper */
+        --bg-card: #FFFCF5;
+        --iron-teal: #2F5C5C; /* Deep Window Green */
+        --brick-red: #A64B35; /* Traditional Brick */
+        --antique-gold: #D4A373;
+        --text-primary: #1A1A1A; /* Darker black for readability */
+        --text-secondary: #4A4A4A;
+        --border-color: #D6D0C2;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-primary);
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: 'Merriweather', 'Noto Sans TC', serif;
+        margin: 0;
+        font-weight: 700;
+        color: var(--iron-teal);
+      }
+
+      /* Ensure placeholders are visible */
+      input::placeholder {
+        color: #999;
+        opacity: 1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Hide Scrollbars */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* --- CSS Window Grille Patterns --- */
+      .pattern-diamond {
+        background-color: transparent;
+        background-image: linear-gradient(135deg, var(--iron-teal) 25%, transparent 25%), linear-gradient(225deg, var(--iron-teal) 25%, transparent 25%), linear-gradient(45deg, var(--iron-teal) 25%, transparent 25%), linear-gradient(315deg, var(--iron-teal) 25%, transparent 25%);
+        background-position: 10px 0, 10px 0, 0 0, 0 0;
+        background-size: 20px 20px;
+        background-repeat: repeat;
+        background-color: rgba(47, 92, 92, 0.1); 
+      }
+      /* Remove opacity from class to avoid child inheritance issues, handled in background-color above if needed, but linear-gradient handles the pattern opacity visually */
+      /* Actually, previously I used opacity property, now I just use transparent colors */
+
+      .pattern-circle {
+        background-image: radial-gradient(circle, transparent 20%, var(--bg-body) 20%, var(--bg-body) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--bg-body) 20%, var(--bg-body) 80%, transparent 80%, transparent);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+        background-color: rgba(47, 92, 92, 0.05);
+      }
+
+      /* Animation for Fortune Sticks (Shake) */
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+      .shake-anim {
+        animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) infinite;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      #root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #F4F0E6;
+        box-shadow: 0 0 40px rgba(47, 92, 92, 0.15);
+        position: relative;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+      
+      @media (max-width: 600px) {
+        #root {
+            box-shadow: none;
+            border: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

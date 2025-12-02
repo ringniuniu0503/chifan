@@ -1,0 +1,7 @@
+{
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "name": "Taiwan Foodie",
+  "description": "Retro styled food discovery app."
+}
